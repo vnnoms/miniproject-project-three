@@ -41,7 +41,7 @@ body {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-primary);
+  color: var(--bg-card);
   padding: 6px 12px;
   border-radius: 4px;
   transition: background-color var(--transition-default);
@@ -66,32 +66,96 @@ body {
   border-radius: 4px;
 }
 
-.hero-section {
+.hero-carousel {
   position: relative;
-  min-height: 100vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("../assets/informatics-engineering.jpg") center/cover no-repeat;
-  padding: 80px 20px;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.hero-content {
+.carousel-slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; 
+}
+
+.carousel-slides::-webkit-scrollbar {
+  display: none; 
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide-1 {
+  background-image: url("../assets/informatics-engineering.jpg");
+}
+
+.slide-2 {
+  background-image: url("../assets/informatics-engineering-1.jpg");
+}
+
+.slide-3 {
+  background-image: url("../assets/informatics-engineering-2.jpg");
+}
+
+.hero-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   z-index: 2;
-  margin-top: -40px; 
+  width: 90%;
+  max-width: 600px;
+  pointer-events: none;
+}
+
+.hero-content .cta-group,
+.hero-content .carousel-indicators {
+  pointer-events: auto;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  width: 90%;
+  max-width: 600px;
+  pointer-events: none;
+}
+
+.hero-content .cta-group,
+.hero-content .carousel-indicators {
+  pointer-events: auto;
 }
 
 .hero-title {
   font-size: 40px;
   font-weight: 600;
   color: #ffffff;
-  text-shadow: 0 2px 10px rgba(17, 34, 80, 0.4);
-  margin-bottom: 4px;
+  text-shadow: 0 2px 10px rgba(17, 34, 80, 0.6);
+  margin-bottom: 6px;
 }
 
 .hero-subtitle {
@@ -211,13 +275,14 @@ figcaption {
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--border-color);
   color: var(--color-primary);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 24px;
+  text-decoration: none;
   cursor: pointer;
   backdrop-filter: blur(4px);
   transition: background-color var(--transition-default);
@@ -236,21 +301,25 @@ figcaption {
   right: 24px;
 }
 
+/* Dots */
 .carousel-indicators {
   display: flex;
-  gap: 8px;
-  margin-top: 32px;
+  gap: 10px;
+  margin-top: 28px;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.4);
+  transition: background-color var(--transition-default), transform var(--transition-default);
 }
 
-.dot.active {
+.dot:hover {
   background-color: #ffffff;
+  transform: scale(1.2);
 }
 
 .btn:focus-visible,

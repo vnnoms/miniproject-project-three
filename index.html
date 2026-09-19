@@ -24,24 +24,34 @@
         </header>
 
         <main>
-            <!-- Hero Section using informatics-engineering.jpg via CSS background -->
-            <section id="hero" class="hero-section">
-                <button class="carousel-arrow arrow-prev" aria-label="Previous">‹</button>
-                <button class="carousel-arrow arrow-next" aria-label="Next">›</button>
+            <!-- Hero Carousel -->
+            <section id="hero" class="hero-carousel">
+                <!-- Carousel Slides -->
+                <div class="carousel-slides">
+                    <div id="slide-1" class="carousel-slide slide-1"></div>
+                    <div id="slide-2" class="carousel-slide slide-2"></div>
+                    <div id="slide-3" class="carousel-slide slide-3"></div>
+                </div>
 
+                <!-- Floating Controls -->
+                <a href="#slide-1" class="carousel-arrow arrow-prev" aria-label="Previous slide">‹</a>
+                <a href="#slide-2" class="carousel-arrow arrow-next" aria-label="Next slide">›</a>
+
+                <!-- Floating Hero Content -->
                 <div class="hero-content">
                     <h1 class="hero-title">TutorIn Peer Hub</h1>
                     <p class="hero-subtitle">Student-Led Engineering &amp; Logic Mentorship</p>
 
                     <div class="cta-group">
-                        <a href="#service" class="btn btn-primary">Explore Services</a>
+                        <a href="#service" class="btn btn-primary">Join Us Now!</a>
                         <a href="#about" class="btn btn-secondary">Learn More</a>
                     </div>
 
+                    <!-- Dot Navigation Links -->
                     <div class="carousel-indicators">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                        <a href="#slide-1" class="dot" aria-label="Slide 1"></a>
+                        <a href="#slide-2" class="dot" aria-label="Slide 2"></a>
+                        <a href="#slide-3" class="dot" aria-label="Slide 3"></a>
                     </div>
                 </div>
             </section>
