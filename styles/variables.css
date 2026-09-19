@@ -1,0 +1,22 @@
+:root {
+  --color-navy-blue: #112250;
+  --color-sapphire: #3B507D;
+  --color-warm-taupe: #BEB7A7;
+  --color-champagne: #E7E2CE;
+  --color-ivory: #F5F4F0;
+
+  --bg-page: var(--color-ivory);
+  --bg-card: #ffffff;
+  --color-primary: var(--color-navy-blue);
+  --color-accent: var(--color-sapphire);
+  --color-muted: var(--color-warm-taupe);
+  --color-surface: var(--color-champagne);
+  --color-text: var(--color-navy-blue);
+  --border-color: var(--color-warm-taupe);
+
+  --base-spacing: 16px;
+  --border-radius: 12px;
+
+  --font-family-base: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-heading: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
